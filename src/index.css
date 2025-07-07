@@ -1,29 +1,29 @@
 :root {
-  --primary-color: #f0f0f5;
-  --primary-dark: #98a7ba;
-  --button-hover: #7b828d;
-  --button-active: #5b5f68;
-  --header-text: #ffb300;
-  --primary-border: #595f64;
-  --text-color: #222;
+  --primary-color: #ffffff;        /* Clean white background */
+  --primary-dark: #f2f2f7;         /* Subtle off-white for contrast */
+  --button-hover: #e5e5ea;         /* Soft hover shade */
+  --button-active: #d1d1d6;        /* Active state, lightly darker */
+  --header-text: #1d1d1f;          /* Almost black, crisp header */
+  --primary-border: #dcdcdc;       /* Light gray border like macOS modals */
+  --text-color: #1d1d1f;           /* Main text color, consistent with Apple UI */
 }
 
 .darkmode {
-  --primary-color: #2a2e3a;
-  --primary-dark: #1c1f26;
-  --button-hover: #444856;
-  --button-active: #2a2d35;
-  --header-text: #fac650;
-  --primary-border: #9aa3b1;
-  --text-color: #f4f4f4;
+  --primary-color: #1c1c1e;
+  --primary-dark: #2c2c2e;
+  --button-hover: #3a3a3c;
+  --button-active: #48484a;
+  --header-text: #f5f5f7;
+  --primary-border: #3a3a3c;
+  --text-color: #f5f5f7;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Helvetica, Arial, sans-serif;
-    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.3s ease;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.3s ease;
 }
 
 body {
@@ -48,18 +48,31 @@ body {
   color: var(--header-text);
 }
 
-footer {
+.footer {
   position: fixed;
   bottom: 0;
-  width: 100%;
   background-color: var(--primary-dark);
   color: var(--header-text);
   text-align: center;
-  padding: 10px 0;
+  padding: 15px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  width: 80%;
+  margin-bottom: 3vh;
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .github-logo {
@@ -86,7 +99,8 @@ footer {
     padding: 20px;
   }
 }
+
 .glow {
-    text-shadow: 0 0 5px #fff, 0 0 20px rgb(211, 167, 56), 0 0 10px rgb(255, 213, 0);
-    transition: text-shadow 0.3s ease-in-out;
-  }
+  text-shadow: 0 0 5px #fff, 0 0 20px rgb(211, 167, 56), 0 0 10px rgb(255, 213, 0);
+  transition: text-shadow 0.3s ease-in-out;
+}
