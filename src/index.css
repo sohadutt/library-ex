@@ -1,8 +1,21 @@
 :root {
-    --primary-color: #4CAF50;
-    --secondary-color: #f1f1f1;
-    --text-color: #333;
-    --font-size: 16px;
+  --primary-color: #f0f0f5;
+  --primary-dark: #98a7ba;
+  --button-hover: #7b828d;
+  --button-active: #5b5f68;
+  --header-text: #ffb300;
+  --primary-border: #595f64;
+  --text-color: #222;
+}
+
+.darkmode {
+  --primary-color: #2a2e3a;
+  --primary-dark: #1c1f26;
+  --button-hover: #444856;
+  --button-active: #2a2d35;
+  --header-text: #fac650;
+  --primary-border: #9aa3b1;
+  --text-color: #f4f4f4;
 }
 
 * {
@@ -10,4 +23,70 @@
     margin: 0;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.3s ease;
 }
+
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.toggle-theme {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(76, 175, 80, 0);
+  color: rgb(27, 34, 49);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.darkmode .toggle-theme {
+  color: var(--header-text);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--primary-dark);
+  color: var(--header-text);
+  text-align: center;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.github-logo {
+  width: 24px;
+  height: 24px;
+  filter: invert(100%);
+}
+
+@media (max-width: 600px) {
+  .bot-choice,
+  .player-choice {
+    width: 120px;
+    height: 120px;
+    font-size: 72px;
+  }
+
+  .computer p,
+  .player p {
+    font-size: 1.2rem;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    padding: 20px;
+  }
+}
+.glow {
+    text-shadow: 0 0 5px #fff, 0 0 20px rgb(211, 167, 56), 0 0 10px rgb(255, 213, 0);
+    transition: text-shadow 0.3s ease-in-out;
+  }
