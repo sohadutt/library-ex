@@ -1,19 +1,23 @@
 const MyLibrary = [];
 
-function book(title, author, year, pages, id) {
+class Book {
+  constructor(
+    title = 'Unknown',
+    author = 'Unknown',
+    pages = 0,
+    completed = false
+  ) {
+    this.id = ++uniqueId;
     this.title = title;
     this.author = author;
-    this.year = year;
     this.pages = pages;
-    this.id = id;
-    this.read = false;
-    this.toggleRead = function() {
-        this.read = !this.read;
-    }
+    this.completed = completed;
+    this.container = null;
+  }
 }
 
 function addBookToLibrary(title, author, year, pages) {
     const id = crypto.randomUUID();
-    const bookInstance = new book(title, author, year, pages, id);
+    const bookInstance = new Book(title, author, year, pages, id);
     MyLibrary.push(bookInstance);
 }
