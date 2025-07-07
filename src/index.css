@@ -1,0 +1,13 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #f1f1f1;
+    --text-color: #333;
+    --font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
