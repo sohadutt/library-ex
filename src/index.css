@@ -23,7 +23,7 @@
   margin: 0;
   padding: 0;
   font-family: Helvetica, Arial, sans-serif;
-  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.3s ease;
+  transition: background-color 0.4s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 body {
@@ -80,6 +80,11 @@ body {
   border: 1px solid rgba(59, 59, 59, 0.255);
 }
 
+.darkmode .container {
+  box-shadow: 0 4px 30px -20px rgba(143, 156, 178, 0.2) inset;
+  border: 1px solid rgba(59, 59, 59, 0.255);
+}
+
 .github-logo {
   width: 24px;
   height: 24px;
@@ -106,6 +111,16 @@ body {
   border-radius: 20px;
   box-shadow: 5px 5px 50px -5px rgba(24, 24, 24, 0.132),0 4px 30px rgb(255, 255, 255) inset;
   border: 1px solid rgba(255, 255, 255, 0.5);
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+    }
 }
 
 main {
@@ -114,6 +129,46 @@ main {
   justify-content: center;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3rem;
+  gap: 3rem; /* spacing between header, unread, read */
+  overflow-y: auto;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.unread, .read {
+  width: 100%;
+}
+
+.unread > p, .read > p {
+  font-weight: medium;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+.head-btn .add-book, .edit-book {
+  background-color: rgba(76, 175, 79, 0);
+  color: var(--header-text);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
 
 
 @media (max-width: 600px) {
