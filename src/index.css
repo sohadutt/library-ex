@@ -1,6 +1,6 @@
 :root {
   --primary-color: #ffffff;        /* Clean white background */
-  --primary-dark: #f2f2f7;         /* Subtle off-white for contrast */
+  --primary-dark: #d7eaffa9;         /* Subtle off-white for contrast */
   --button-hover: #e5e5ea;         /* Soft hover shade */
   --button-active: #d1d1d6;        /* Active state, lightly darker */
   --header-text: #1d1d1f;          /* Almost black, crisp header */
@@ -9,8 +9,8 @@
 }
 
 .darkmode {
-  --primary-color: #1c1c1e;
-  --primary-dark: #2c2c2e;
+  --primary-color: #000000;
+  --primary-dark: #0d0d0d;
   --button-hover: #3a3a3c;
   --button-active: #48484a;
   --header-text: #f5f5f7;
@@ -59,13 +59,13 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  width: 80%;
+  width: 75%;
   margin-bottom: 3vh;
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
   border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 5px 5px 30px -5px rgba(24, 24, 24, 0.132),0 4px 30px rgb(255, 255, 255) inset;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
 }
 
 .pf {
@@ -75,11 +75,22 @@ body {
   flex-direction: column;
 }
 
+.darkmode .footer {
+  box-shadow: 0 4px 30px -20px rgba(143, 156, 178, 0.2) inset;
+  border: 1px solid rgba(59, 59, 59, 0.255);
+}
+
 .github-logo {
   width: 24px;
   height: 24px;
-  filter: invert(100%);
 }
+.darkmode .github-logo {
+  filter: invert(1);
+}
+
+
+
+
 
 @media (max-width: 600px) {
   .bot-choice,
@@ -98,9 +109,4 @@ body {
     max-width: 90%;
     padding: 20px;
   }
-}
-
-.glow {
-  text-shadow: 0 0 5px #fff, 0 0 20px rgb(211, 167, 56), 0 0 10px rgb(255, 213, 0);
-  transition: text-shadow 0.3s ease-in-out;
 }
