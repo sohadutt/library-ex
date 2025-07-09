@@ -4,7 +4,7 @@
   --button-hover: #e5e5ea;         /* Soft hover shade */
   --button-active: #d1d1d6;        /* Active state, lightly darker */
   --header-text: #1d1d1f;          /* Almost black, crisp header */
-  --primary-border: #dcdcdc;       /* Light gray border like macOS modals */
+  --primary-border: #545454;       /* Light gray border like macOS modals */
   --text-color: #1d1d1f;           /* Main text color, consistent with Apple UI */
 }
 
@@ -14,7 +14,7 @@
   --button-hover: #3a3a3c;
   --button-active: #48484a;
   --header-text: #f5f5f7;
-  --primary-border: #3a3a3c;
+  --primary-border: #c2c2c8;
   --text-color: #f5f5f7;
 }
 
@@ -139,9 +139,6 @@ main {
   overflow-y: auto;
 }
 
-.book-list {
-  padding: .5rem;
-}
 
 .header {
   width: 100%;
@@ -183,6 +180,109 @@ h1 {
 .darkmode .head-btn .edit-book:hover {
   text-shadow: 2px 2px 25px rgba(255, 255, 255, 0.86);
 }
+
+.Library {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 5px;
+}
+
+
+.section-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.section-header p {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--header-text);
+  margin: 0;
+  padding-left: 5px;
+}
+
+.book-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.book {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--primary-border);
+  background-color: transparent;
+}
+.list-r {
+  display: flex;
+}
+
+.rating {
+  width: 60px;
+  height: 65px;
+  background-color: rgba(88, 105, 111, 0.442);
+  flex-shrink: 0;
+  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--primary-border);
+  font-weight: bold;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.book-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0;
+  padding-left: 20px;
+  color: var(--header-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-author {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-checkbox {
+  width: 28px;
+  height: 28px;
+  accent-color: var(--header-text);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-left: auto;
+  accent-color: var(--header-text);
+}
+
+
 
 
 @media (max-width: 600px) {

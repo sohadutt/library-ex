@@ -21,16 +21,30 @@
                     <button class="edit-book" id="edit-book">Edit</button>
                 </div>
             </div>
-            <div class="book-list">
+            <div class="Library">
                 <div class="unread">
-                    <p>Want to read</p>
-                    <div class="book-list-unread" id="book-list-unread">
+                    <div class="section-header">
+                        <p>Want to read</p>
+                    </div>
+                    <div class="book-list" id="book-list-unread">
                         <!-- Book items will be dynamically inserted here -->
+                        <div class="book" id="book1">
+                            <div class="list-r">
+                                <div class="rating">9.4</div>
+                                <div class="book-details">
+                                    <span class="book-title">Book Title</span>
+                                    <span class="book-author">Author Name</span>
+                                </div>
+                            </div>
+                            <input type="checkbox" class="book-checkbox" id="book1-checkbox" />
+                        </div>
                     </div>
                 </div>
                 <div class="read">
-                    <p>Read</p>
-                    <div class="book-list-read" id="book-list-read">
+                    <div class="section-header">
+                        <p>Read</p>
+                    </div>
+                    <div class="book-list" id="book-list-read">
                         <!-- Book items will be dynamically inserted here -->
                     </div>
                 </div>
