@@ -1,23 +1,20 @@
 let MyLibrary = [];
 let editingBookId = null;
 let currentEditBookId = null;
-document.addEventListener('DOMContentLoaded', () => {
-  const modalOverlay  = document.getElementById('modal-overlay');
-  const bookForm      = document.getElementById('book-form');
-  const closeModalBtn = document.getElementById('close-modal');
-  const addBookBtn    = document.getElementById('add-book');
-  const editBookBtn   = document.getElementById('edit-book');
-  const editModalOverlay = document.getElementById('edit-modal-overlay');
-  const closeEditModalBtn = document.getElementById('close-edit-modal');
-  const toggleReadStatusBtn = document.getElementById('toggle-read-status');
-  const deleteBookBtn = document.getElementById('delete-book');
-  const editBookInfo = document.getElementById('edit-book-info');
-  const bookListUnread = document.getElementById('book-list-unread');
-  const bookListRead = document.getElementById('book-list-read');
-  
 
-  
-  
+document.addEventListener('DOMContentLoaded', () => {
+  const modalOverlay        = document.getElementById('modal-overlay');
+  const bookForm            = document.getElementById('book-form');
+  const closeModalBtn       = document.getElementById('close-modal');
+  const addBookBtn          = document.getElementById('add-book');
+  const editBookBtn         = document.getElementById('edit-book');
+  const editModalOverlay    = document.getElementById('edit-modal-overlay');
+  const closeEditModalBtn   = document.getElementById('close-edit-modal');
+  const toggleReadStatusBtn = document.getElementById('toggle-read-status');
+  const deleteBookBtn       = document.getElementById('delete-book');
+  const editBookInfo        = document.getElementById('edit-book-info');
+  const bookListUnread      = document.getElementById('book-list-unread');
+  const bookListRead        = document.getElementById('book-list-read');
 
   class Book {
     constructor(title, author, year, pages, rating, completed = false) {
@@ -74,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function createBookElement(book) {
     const div = document.createElement('div');
     div.className = 'book';
-    div.dataset.id = book.id; // store id for selection
+    div.dataset.id = book.id;
     div.innerHTML = `
       <div class="list-r">
         <div class="rating">${book.rating.toFixed(1)}</div>
@@ -85,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <input type="checkbox" class="book-checkbox" />
     `;
-
 
     toggleReadStatusBtn.addEventListener('change', e => {
       if (e.target.checked) {
@@ -131,12 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', handleEscape);
 
     if (book) {
-      bookForm.title.value        = book.title;
-      bookForm.author.value       = book.author;
-      bookForm.year.value         = book.year;
-      bookForm.pages.value        = book.pages;
-      bookForm.rating.value       = book.rating;
-      bookForm.completed          = book.completed;
+      bookForm.title.value   = book.title;
+      bookForm.author.value  = book.author;
+      bookForm.year.value    = book.year;
+      bookForm.pages.value   = book.pages;
+      bookForm.rating.value  = book.rating;
+      bookForm.completed     = book.completed;
       editingBookId = book.id;
     } else {
       bookForm.reset();
