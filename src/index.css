@@ -300,7 +300,174 @@ h1 {
   accent-color: var(--header-text);
 }
 
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
 
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal {
+  background-color: var(--primary-dark);
+  color: var(--text-color);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow:
+    8px 8px 20px rgba(0, 0, 0, 0.2),
+    -8px -8px 20px rgba(255, 255, 255, 0.05);
+  width: 90%;
+  max-width: 480px;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+}
+
+.modal-overlay.show .modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.modal input[type="text"],
+.modal input[type="number"] {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.05);
+  font-size: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  margin: 1rem 0;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.neumorphic {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.2),
+    -6px -6px 12px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.neumorphic:hover {
+  box-shadow:
+    inset 2px 2px 4px rgba(0, 0, 0, 0.15),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.05);
+  transform: scale(0.98);
+}
+
+.darkmode .modal {
+  background-color: var(--primary-dark);
+}
+
+.darkmode .neumorphic {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.unread,
+.read {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#edit-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+
+}
+
+#edit-modal-overlay.show {
+  display: flex;
+}
+
+.modal-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--header-text);
+  text-align: center;
+}
+
+.delete-btn {
+  background: #ff4d4d;
+  color: white;
+  box-shadow:
+    6px 6px 12px rgba(255, 77, 77, 0.5),
+    -6px -6px 12px rgba(255, 77, 77, 0.2);
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  box-shadow:
+    inset 2px 2px 6px rgba(255, 77, 77, 0.7),
+    inset -2px -2px 6px rgba(255, 77, 77, 0.4);
+  transform: scale(0.98);
+  color: #fff;
+}
+
+.cancel-btn {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 400px) {
+  .modal-buttons {
+    flex-direction: column;
+  }
+}
 
 
 @media (max-width: 600px) {

@@ -65,6 +65,39 @@
             </a>
         </footer>
     </footer>
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <h2>Add a New Book</h2>
+            <form id="book-form">
+                <input type="text" id="title" placeholder="Book Title" required />
+                <input type="text" id="author" placeholder="Author" required />
+                <input type="number" id="year" placeholder="Year" required />
+                <input type="number" id="pages" placeholder="Pages" required />
+                <input type="number" id="rating" placeholder="Rating (0–10)" min="0" max="10" step="0.1" required />
+                <label class="checkbox-label">
+                    <input type="checkbox" id="completed" />
+                    Mark as Completed
+                </label>
+                <div class="modal-buttons">
+                    <button type="submit" class="confirm neumorphic">Add Book</button>
+                    <button type="button" class="cancel neumorphic" id="close-modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-overlay" id="edit-modal-overlay" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="edit-modal-title">
+            <h2 id="edit-modal-title">Edit Book</h2>
+            <div class="modal-content">
+                <p id="edit-book-info"></p>
+                <div class="modal-buttons">
+                    <button id="toggle-read-status" class="neumorphic">Mark as Read/Unread</button>
+                    <button id="delete-book" class="neumorphic delete-btn">Delete Book</button>
+                    <button id="close-edit-modal" class="neumorphic cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./src/app.js"></script>
     <script src="./src/assist/sys.js"></script>
 </body>
