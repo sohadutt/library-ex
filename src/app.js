@@ -230,10 +230,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Make book objects available globally for testing
 function getLibrary() {
-  return fetch('./assist/books.json')
+  return fetch('./books.json')
     .then(response => response.json())
     .then(data => {
-      MyLibrary = data;
+      addBookToLibrary(data);
       renderLibrary();
     });
 }
