@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const year      = parseInt(bookForm.year.value, 10);
     const pages     = parseInt(bookForm.pages.value, 10);
     const rating    = parseFloat(bookForm.rating.value);
-    const completed = bookForm.completed;
+    const completed = bookForm.completed.checked;
 
     if (!title || !author || isNaN(year) || isNaN(pages) || isNaN(rating)) {
       alert('Please fill in all fields correctly.');
@@ -238,9 +238,9 @@ function getLibrary() {
       return response.json();
     })
     .then(data => {
-      addBookToLibrary(data);
-      renderLibrary();
-    })
+    data.forEach(bookData => addBookToLibrary(bookData));
+    renderLibrary();
+  })
     .catch(error => {
       console.error("Failed to load books:", error);
     });
