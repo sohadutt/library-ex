@@ -80,6 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="book-title">${book.title}</span>
           <span class="book-author">${book.author}</span>
         </div>
+        <div class="hidden-book-details">
+        <span class="year">${book.year}</span>
+        <span class="pages">${book.pages}</span>
+      </div>
       </div>
       <input type="checkbox" class="book-checkbox" />
     `;
@@ -228,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderLibrary();
 
-  const libdata = [[
+const libdata = [[
   {
     "id": "a53eaec8-09ff-4e30-a724-7268345fbebe",
     "title": "Shadows of Eternity 8",
@@ -1133,7 +1137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function genlib() {
   const gendata = libdata;
-
+  
  gendata.forEach(innerArrey => {
   innerArrey.forEach(element => {
    addBookToLibrary(element);
