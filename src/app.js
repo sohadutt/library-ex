@@ -197,13 +197,15 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Please select a book to edit.');
       return;
     }
-    if (selectedBooks.length > 1) {
-      alert('Please select only one book to edit at a time.');
-      return;
-    }
+  
     const bookDiv = selectedBooks[0].closest('.book');
-    const bookId = bookDiv.dataset.id;
-    const book = MyLibrary.find(b => b.id === bookId);
+    for (const book of selectedBooks) {
+      if (book.checked) {
+        editingBookId = bookDiv.dataset.id;
+        break;
+      }
+    }
+    const book = MyLibrary.find(b => b.id === editingBookId);
     if (book) {
       openEditModal(book);
     }
@@ -225,3 +227,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderLibrary();
 });
+
+// Make book objects available globally for testing
+function getLibrary() {
+  return fetch('./assist/books.json')
+    .then(response => response.json())
+    .then(data => {
+      MyLibrary = data;
+      renderLibrary();
+    });
+}
