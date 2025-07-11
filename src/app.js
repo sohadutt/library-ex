@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const bookListRead        = document.getElementById('book-list-read');
 
   class Book {
-    constructor(title, author, year, pages, rating, completed = false) {
+    constructor(title, author, year, pages, rating, completed) {
       this.id        = crypto.randomUUID();
       this.title     = title;
       this.author    = author;
