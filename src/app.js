@@ -230,10 +230,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Make book objects available globally for testing
 function getLibrary() {
-  return fetch('./books.json')
-    .then(response => response.json())
+  return fetch('/books.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then(data => {
       addBookToLibrary(data);
       renderLibrary();
+    })
+    .catch(error => {
+      console.error("Failed to load books:", error);
     });
 }
